@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staxx Travel</title>
+  <meta name="description" content="Help choose where Staxx Travel goes next. Dog-friendly, road-tested adventures.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top"><img src="assets/logo.svg" alt="Staxx Travel logo"></a>
+    <nav class="links">
+      <a href="#destinations">Destinations</a>
+      <a href="#episodes">Episodes</a>
+      <a href="#route">Route</a>
+      <a href="#vote" class="pill">Vote</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-bg" src="assets/hero.jpg" alt="">
+      <div class="hero-content">
+        <h1 id="site-title">Staxx Travel</h1>
+        <p id="site-tagline">Roadtrips, dogs, & good vibes.</p>
+        <div class="cta-row">
+          <a href="#destinations" class="btn primary">Explore</a>
+          <a href="#vote" class="btn">Pick Our Next Stop</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section">
+      <div class="section-head">
+        <h2>Candidate Destinations</h2>
+        <p class="muted">Edit the list in <code>/data/destinations.json</code></p>
+      </div>
+      <div class="grid" id="dest-grid"></div>
+    </section>
+
+    <section id="episodes" class="section">
+      <div class="section-head">
+        <h2>Episodes</h2>
+        <p class="muted">Link your YouTube/TikTok in <code>/data/episodes.json</code></p>
+      </div>
+      <div class="grid" id="ep-grid"></div>
+    </section>
+
+    <section id="route" class="section map-wrap">
+      <div class="section-head">
+        <h2>Route Map</h2>
+        <p class="muted">Update <code>/data/route.geojson</code> with your real coordinates</p>
+      </div>
+      <div id="map" role="application" aria-label="Route map"></div>
+    </section>
+
+    <section id="vote" class="section highlight">
+      <div class="cta-stack">
+        <h2>Vote Where We Go Next</h2>
+        <p class="muted">Point this button to a free Google Form or your voting app.</p>
+        <div class="cta-row">
+          <a class="btn primary" id="voteLink" href="#" target="_blank" rel="noopener">Open Voting Page</a>
+          <a class="btn" href="https://docs.google.com/forms" target="_blank" rel="noopener">Create a Free Google Form</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="section">
+      <div class="section-head">
+        <h2>Connect</h2>
+        <p class="muted">Swap social links in <code>/data/config.json</code></p>
+      </div>
+      <div class="socials">
+        <a id="ig" class="btn" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a id="tt" class="btn" href="#" target="_blank" rel="noopener">TikTok</a>
+        <a id="yt" class="btn" href="#" target="_blank" rel="noopener">YouTube</a>
+        <a id="email" class="btn" href="#">Email Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="brand">Staxx Travel</span></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
